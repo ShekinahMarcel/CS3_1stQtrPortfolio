@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Shekinah Puguon's Non-Graded Task</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/8d/ee/3d/8dee3d58aa2861c46c9db655ebb32e9a.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #bb447f, #d69a21, #289973, #a00505);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 5s ease infinite;
+            text-shadow: 2px 2px #4d172d;
+        }
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .sparkles {
+            font-size: 1.5em;
+            color: rgb(145, 129, 41);
+        }
+
+        .text-box {
+            background: rgba(255, 255, 255, 0.75);
+            padding: 15px 25px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 200px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shekinah Puguon's Non-Graded Task</h1>
+    <p class="sparkles">˙⋆✮</p>
+
+    <div class="text-box">
+        <script>
+            let age = 14;
+            let maxage = 60;
+            let perday = 1;
+
+            let total = (perday * 365) * (maxage - age);
+            document.write("You will eat cookies " + total + " times until you are " + maxage + " years old.");
+        </script>
+    </div>
+
+    <!-- Centered Cookie Image -->
+    <img src="https://static.vecteezy.com/system/resources/previews/044/308/311/non_2x/chocolate-chip-cookies-with-transparent-background-png.png" alt="Cookies">
+
+</body>
+</html>
