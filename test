@@ -1,0 +1,10 @@
+<script>
+    age = 14 
+    maxage = 40
+
+    numberPerDay = 1
+
+    total = numberPerDay * 365 * (maxage - age)
+
+    document.write ("You will play a total of" + total + "games in your lfieieifiee")
+</script>
