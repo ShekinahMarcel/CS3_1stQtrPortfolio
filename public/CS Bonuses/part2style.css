@@ -1,0 +1,23 @@
+body {
+  background: pink;
+  text-align: center;
+  padding-top: 100px;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: deeppink;
+}
+
+button {
+  padding: 10px 20px;
+  background: hotpink;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: deeppink;
+}

@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fff9c4);
+}
+
+.info {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.card { 
+  width: 220px;
+  padding: 1.5em;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+  background-color: #f9f9f9;
+}
+
+.emoji {
+  font-size: 4rem;
+  background-color: #ffe082;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #00796b;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card .rarity {
+  font-weight: bold;
+  color: #d32f2f;
+}
