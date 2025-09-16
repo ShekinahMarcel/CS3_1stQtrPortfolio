@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Guess My Word hihi</title>
+<style>
+  body {
+    background: url("https://i.pinimg.com/736x/95/18/40/951840eb3ebe31937ec83aac59a8cba0.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: black;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    display: inline-block;
+    padding: 20px 40px;
+    margin-top: 60px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  input, button {
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  #wordDisplay {
+    font-size: 26px;
+    letter-spacing: 6px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Guess My Word</h1>
+  <p id="wordDisplay"></p>
+  <input type="text" id="guessInput" maxlength="1">
+  <button onclick="makeGuess()">Guess</button>
+  <p>Guessed letters: <span id="guessedLetters"></span></p>
+  <p id="message"></p>
+  <p id="attempts"></p>
+</div>
+
+<script>
+  let secretWord = ["s","k","i","b","i","d","i","s","h","e","k","i","n","a","h"];
+  let guessedWord = secretWord.map(c => "_");
+  let guessedLetters = [];
+  let attemptsLeft = 10;
+
+  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+  document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+
+  function makeGuess() {
+    let guess = document.getElementById("guessInput").value.toLowerCase();
+    document.getElementById("guessInput").value = "";
+
+    if (!guess.match(/[a-z]/) || guess.length !== 1) {
+      document.getElementById("message").textContent = "⚠️ Enter a single letter!";
+      return;
+    }
+
+    if (guessedLetters.includes(guess)) {
+      document.getElementById("message").textContent = "⚠️ Already guessed '" + guess + "'";
+      return;
+    }
+
+    guessedLetters.push(guess);
+    document.getElementById("guessedLetters").textContent = guessedLetters.join(", ");
+
+    let correct = false;
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === guess) {
+        guessedWord[i] = guess;
+        correct = true;
+      }
+    }
+
+    if (!correct) attemptsLeft--;
+
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+    document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Wrong guess";
+
+    if (guessedWord.join("") === secretWord.join("")) {
+      document.getElementById("message").textContent = "🎉 You guessed it! '" + secretWord.join("") + "'";
+    } else if (attemptsLeft <= 0) {
+      document.getElementById("message").textContent = "💀 Out of attempts! The word was '" + secretWord.join("") + "'";
+    }
+  }
+</script>
+
+</body>
+</html>
