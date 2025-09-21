@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: url("https://i.pinimg.com/736x/17/70/ec/1770ec99284e21c7ab592f088ff9e7bb.jpg") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 4px black;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #reflectionBox {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guess My Word</h1>
+    <p id="wordDisplay"></p>
+    <input type="text" id="guessInput" maxlength="1">
+    <button onclick="makeGuess()">Guess</button>
+    <p id="message"></p>
+    <p id="attempts"></p>
+
+    <!-- Reflection Section -->
+    <button onclick="showReflection()">Click me for reflection</button>
+    <div id="reflectionBox">
+        <h2>My Reflection</h2>
+        <p><b>What’s one thing you learned about loops this quarter?</b><br>
+            Loops make it so much easier and effective to check each letter in the word without writing and repeating my
+            code.</p>
+
+        <p><b>How do arrays make your code more powerful?</b><br>
+            Arrays can let me store and organize all the letters in the word, can be used update them one by one when
+            guessed.</p>
+
+        <p><b>What’s one feature you’d add if you had more time?</b><br>
+            I’d add a list of guessed letters so players don’t repeat the same guesses.</p>
+    </div>
+
+    <script>
+        // Secret word: "wonderfulwayne"
+        let secretWord = ["w", "o", "n", "d", "e", "r", "f", "u", "l", "w", "a", "y", "n", "e"];
+        let guessedWord = Array(secretWord.length).fill("_");
+        let attemptsLeft = 10; // attempt counter
+
+        document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+        document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+
+        function makeGuess() {
+            let guess = document.getElementById("guessInput").value.toLowerCase();
+            let correct = false;
+
+            for (let i = 0; i < secretWord.length; i++) {
+                if (secretWord[i] === guess) {
+                    guessedWord[i] = guess;
+                    correct = true;
+                }
+            }
+
+            if (!correct) {
+                attemptsLeft--;
+            }
+
+            document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+            document.getElementById("message").textContent = correct ? "✅ Correct!" : "❌ Try again.";
+            document.getElementById("attempts").textContent = "Attempts left: " + attemptsLeft;
+            document.getElementById("guessInput").value = "";
+
+            if (attemptsLeft <= 0) {
+                document.getElementById("message").textContent = "💀 Game Over! The word was Wonderful Wayne.";
+            }
+        }
+
+        function showReflection() {
+            document.getElementById("reflectionBox").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
