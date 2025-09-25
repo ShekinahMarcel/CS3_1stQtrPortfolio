@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: #050914 url("https://i.pinimg.com/1200x/a7/c3/93/a7c393000144261bd93d4160db288ecc.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Jellyfish Base */
+.jellyfish {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeInOut 20s linear forwards;
+}
+
+.bell {
+  border-radius: 50% 50% 45% 45%;
+  opacity: 0.85;
+  animation: breathe 3s ease-in-out infinite, colorShift 10s linear infinite;
+  filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 15px currentColor);
+}
+
+.tentacle {
+  width: 4px;
+  margin: 1px;
+  display: inline-block;
+  animation: sway 3s ease-in-out infinite, colorShift 10s linear infinite;
+  filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 15px currentColor);
+}
+
+/* Animations */
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.05); }
+}
+@keyframes sway {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes colorShift {
+  0%   { color: #00eaff; background: #00eaff; }
+  25%  { color: #ff00ff; background: #ff00ff; }
+  50%  { color: #ffd700; background: #ffd700; }
+  75%  { color: #39ff14; background: #39ff14; }
+  100% { color: #00eaff; background: #00eaff; }
+}
+</style>
+</head>
+<body>
+
+<script>
+function createJellyfish() {
+  const jelly = document.createElement("div");
+  jelly.classList.add("jellyfish");
+
+  // random size
+  const size = Math.random() * 80 + 40; // 40–120px
+  const bell = document.createElement("div");
+  bell.classList.add("bell");
+  bell.style.width = size + "px";
+  bell.style.height = size * 0.7 + "px";
+  jelly.appendChild(bell);
+
+  // tentacles
+  const tentacleContainer = document.createElement("div");
+  tentacleContainer.style.display = "flex";
+  tentacleContainer.style.justifyContent = "center";
+  jelly.appendChild(tentacleContainer);
+
+  const tentacleCount = Math.floor(Math.random() * 6) + 4;
+  for (let i = 0; i < tentacleCount; i++) {
+    const t = document.createElement("div");
+    t.classList.add("tentacle");
+    t.style.height = size * (1.2 + Math.random() * 0.5) + "px";
+    t.style.animationDuration = (2 + Math.random() * 2) + "s, 15s"; 
+    tentacleContainer.appendChild(t);
+  }
+
+  // random entry side
+  const side = Math.floor(Math.random() * 4); // 0=left,1=right,2=top,3=bottom
+  let startX, startY, endX, endY;
+
+  if (side === 0) { // left
+    startX = -150; startY = Math.random() * 100;
+    endX = 110; endY = Math.random() * 100;
+  } else if (side === 1) { // right
+    startX = 110; startY = Math.random() * 100;
+    endX = -20; endY = Math.random() * 100;
+  } else if (side === 2) { // top
+    startX = Math.random() * 100; startY = -20;
+    endX = Math.random() * 100; endY = 110;
+  } else { // bottom
+    startX = Math.random() * 100; startY = 110;
+    endX = Math.random() * 100; endY = -20;
+  }
+
+  jelly.style.left = startX + "vw";
+  jelly.style.top = startY + "vh";
+
+  // animate swim path
+  const swim = jelly.animate(
+    [
+      { transform: `translate(0,0)` },
+      { transform: `translate(${endX - startX}vw, ${endY - startY}vh)` }
+    ],
+    {
+      duration: 20000 + Math.random() * 15000, // 20–35s
+      easing: "linear",
+      iterations: 1
+    }
+  );
+
+  document.body.appendChild(jelly);
+
+  swim.onfinish = () => jelly.remove();
+}
+
+// spawn jellyfish continuously
+setInterval(createJellyfish, 1500);
+</script>
+</body>
+</html>
