@@ -1,5 +1,93 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day Schedule</title>
+  <link rel="icon" href="favicon.png">
+  <style>
+    body {
+      background-color: #ffe4ec;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: #4b2b36;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
 
+    h1 {
+      color: #b03060;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      color: #6e3a47;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #e0a4b3;
+      padding: 12px;
+      text-align: center;
+      transition: background-color 0.2s ease;
+    }
+
+    th {
+      background-color: #f8c5d0;
+      color: #4b2b36;
+    }
+
+    tr:hover td {
+      background-color: #fdeaf1;
+    }
+
+    .image-section {
+      margin-top: 40px;
+    }
+
+    .image-section h1 {
+      margin-bottom: 15px;
+    }
+
+    .image-gallery img {
+      border-radius: 10px;
+      border: 2px solid #f8c5d0;
+      margin: 10px;
+      width: 120px;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    iframe {
+      margin-top: 20px;
+      border-radius: 12px;
+      border: none;
+      width: 560px;
+      height: 315px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+  </style>
+<body>
+<h1>Choose Day Schedule</h1>
+<p>Shekinah Puguon | Rb 22 </p>
+</body>
+</html>
 <table border = "1"> 
     <tr>
         <th> Time Schedule    </th>
@@ -15,12 +103,22 @@
     <td> Health </td>
 </tr>
 <tr> 
-    <td> 9:10 - 10:40</td>
-    <td> Physics</td>
+    <td> 9:00 - 9:10 </td>
+    <td>  Break </td>
+ 
+</tr>
+<tr> 
+    <td> 9:10 - 9:55</td>
+    <td rowspan="2">Physics</td>
 </tr>
 </tr>
 <tr> 
-    <td> 10:40 - 11:25</td>
+    <td> 9:55 - 10:40</td>
+
+</tr>
+</tr>
+<tr> 
+    <td> 10:40 - 11:25 </td>
     <td> Study Period </td>
 </tr>
 </tr>
@@ -30,26 +128,48 @@
 </tr>
 </tr>
 <tr> 
-    <td> 12:10 - 1:05 </td>
-    <td> Lunch</td>
+    <td> 12:10 - 12:55 </td>
+    <td> Lunch </td>
 </tr>
 </tr>
 <tr> 
-    <td> 1:05 - 1:50 </td>
-    <td> Math </td>
+    <td> 12:55 - 1:05 </td>
+    <td>  Break </td>
+ 
+</tr>
+<tr> 
+    <td> 1:05 - 1:50</td>
+    <td> Math</td>
 </tr>
 </tr>
 <tr> 
-    <td> 1:50 - 2:45</td>
-    <td> Study Period</td>
-</tr>
-</tr>
-<tr> 
-    <td> 2:45 - 4:15</td>
+    <td> 1:50 - 2:35</td>
     <td> Computer Science </td>
 </tr>
+<tr> 
+    <td> 2:35 - 2:45 </td>
+    <td>  Break </td>
+ 
+</tr>
+<tr> 
+    <td> 2:45 - 3:30 </td>
+    <td rowspan="2">Compuer Science</td>
+ 
+</tr>
+<tr> 
+    <td> 3:30 - 4:15 </td>
+ 
+</tr>
 </table>
-<h1> IMAGE WITH PARTNER </h1>
-<image src = "https://media.discordapp.net/attachments/1392109568519176244/1425024525111918725/Snapchat-2114874427.jpg?ex=68e61502&is=68e4c382&hm=ded8e3693d3418f3fbc6795f966515a20cdcbc29363f00af3bd6328b45b19b3f&=&format=webp&width=496&height=882" width = 100></image>
-<image src = "https://media.discordapp.net/attachments/1162261212931825724/1425025288315600947/Snapchat-1037660061.jpg?ex=68e615b8&is=68e4c438&hm=b7ca0c937256a565ef131ec7eb2700bd4d5d8b32cc401941cb202a3297f66539&=&format=webp&width=496&height=882" width = 100></image>
-<iframe src = "https://www.youtube.com/embed/chprwPfP7xY"></iframe>
+  <div class="image-section">
+    <h1>Image with Partner</h1>
+    <div class="image-gallery">
+      <img src="https://cdn.discordapp.com/attachments/1162261212931825724/1426118123567972372/Snapchat-2114874427.jpg?ex=68ecb280&is=68eb6100&hm=f4bf27526dce4c65bae047c8f3487605351b8be3e71595a55cae30aff1aec820" alt="Partner Photo 1">
+      <img src="https://cdn.discordapp.com/attachments/1162261212931825724/1425025288315600947/Snapchat-1037660061.jpg?ex=68ecad38&is=68eb5bb8&hm=054e3275f9de891a3fccff22e0e0895bb1422fffe330f4cff3e96d1b288f6f26" alt="Partner Photo 2">
+    </div>
+
+    <iframe src="https://www.youtube.com/embed/7o_fRK-66bY" allowfullscreen></iframe>
+  </div>
+
+</body>
+</html>
