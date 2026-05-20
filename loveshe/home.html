@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Whimsy Shop</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka', sans-serif;
+}
+
+body{
+background:#fff7f5;
+overflow-x:hidden;
+color:#6d7c6d;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#ffd6df;
+filter:blur(120px);
+top:-100px;
+left:-100px;
+z-index:-1;
+opacity:0.7;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#d9ead7;
+filter:blur(120px);
+bottom:-100px;
+right:-100px;
+z-index:-1;
+opacity:0.7;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:40px 8%;
+}
+
+.logo{
+font-size:3rem;
+font-weight:700;
+color:#738673;
+}
+
+nav ul{
+display:flex;
+gap:50px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#6f7f6f;
+font-weight:600;
+font-size:1.3rem;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff91aa;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 8%;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.tag{
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff9bb0;
+margin-bottom:15px;
+font-size:0.9rem;
+}
+
+.hero h1{
+font-size:5rem;
+line-height:1;
+margin-bottom:25px;
+color:#6f7f6f;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.8;
+max-width:550px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+margin-top:35px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border:none;
+border-radius:999px;
+font-size:1rem;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px) scale(1.03);
+}
+
+.green{
+background:#d8ead4;
+color:#5f6f5f;
+}
+
+.pink{
+background:#ffd8e1;
+color:#7d5b65;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+min-width:300px;
+}
+
+.logo-circle{
+width:420px;
+height:420px;
+background:rgba(255,255,255,0.7);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+backdrop-filter:blur(15px);
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+border:10px solid white;
+}
+
+.logo-circle img{
+width:65%;
+height:65%;
+object-fit:contain;
+}
+
+.section-title{
+text-align:center;
+padding-top:40px;
+}
+
+.section-title p{
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff9bb0;
+font-size:0.9rem;
+}
+
+.section-title h2{
+font-size:3.5rem;
+margin-top:10px;
+color:#6f7f6f;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding:60px 8%;
+}
+
+.card{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card h3{
+font-size:1.7rem;
+margin-bottom:15px;
+}
+
+.price-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.price{
+font-size:1.4rem;
+font-weight:700;
+color:#ff92ac;
+}
+
+.about{
+padding:80px 8%;
+}
+
+.about-box{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+border-radius:50px;
+padding:50px;
+display:flex;
+gap:50px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.about img{
+width:100%;
+max-width:400px;
+border-radius:35px;
+}
+
+.about-text{
+flex:1;
+min-width:280px;
+}
+
+.about-text h2{
+font-size:3.5rem;
+margin:15px 0;
+}
+
+.about-text p{
+line-height:1.9;
+font-size:1.1rem;
+}
+
+.newsletter{
+padding:80px 8%;
+}
+
+.news-box{
+background:#dcebd8;
+padding:60px 40px;
+border-radius:50px;
+text-align:center;
+}
+
+.news-box h2{
+font-size:3rem;
+margin:15px 0;
+}
+
+.input-row{
+display:flex;
+gap:15px;
+justify-content:center;
+margin-top:35px;
+flex-wrap:wrap;
+}
+
+.input-row input{
+padding:18px 25px;
+width:350px;
+border:none;
+border-radius:999px;
+font-size:1rem;
+outline:none;
+}
+
+footer{
+padding:40px;
+text-align:center;
+}
+
+footer h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-bottom:20px;
+}
+
+.socials a{
+text-decoration:none;
+color:#6f7f6f;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:3.5rem;
+}
+
+.section-title h2,
+.about-text h2,
+.news-box h2{
+font-size:2.5rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">♡ whimsy shop ♡</div>
+<ul>
+<li><a href="#home">home</a></li>
+<li><a href="#contacts">contacts</a></li>
+<li><a href="#projects">projects</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<div class="tag">cute • dreamy • handmade</div>
+<h1>kawaii little treasures ✿</h1>
+<p>
+A dreamy collection of charms, stickers, keychains, and tiny trinkets made to bring whimsy into your everyday life.
+</p>
+
+<div class="buttons">
+
+<button class="btn green" onclick="window.location.href='aboutme.html'">
+about me ♡
+</button>
+
+<button class="btn pink" onclick="window.location.href='portfolio.html'">
+portfolio ✿
+</button>
+
+<button class="btn green" onclick="window.location.href='events.html'">
+events ♡
+</button>
+
+</div>
+</div>
+
+<div class="hero-image">
+<div class="logo-circle">
+<img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="logo">
+</div>
+</div>
+</section>
+
+<div class="section-title" id="projects">
+<p>featured goodies</p>
+<h2>cutest picks ♡</h2>
+</div>
+
+<section class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Berry Bunny Keychain</h3>
+<div class="price-row">
+<div class="price">₱120</div>
+<button class="btn green">add ♡</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Sage Sticker Pack</h3>
+<div class="price-row">
+<div class="price">₱85</div>
+<button class="btn pink">add ♡</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Pink Charm Bracelet</h3>
+<div class="price-row">
+<div class="price">₱160</div>
+<button class="btn green">add ♡</button>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+document.querySelectorAll('.btn').forEach(button=>{
+button.addEventListener('mouseenter',()=>{
+button.style.transform='translateY(-5px) scale(1.05)';
+});
+
+button.addEventListener('mouseleave',()=>{
+button.style.transform='translateY(0px) scale(1)';
+});
+});
+</script>
+
+</body>
+</html>
+
+<section class="newsletter">
+<div class="news-box">
+<p class="tag">stay updated</p>
+<h2>join the cute mail club ♡</h2>
+<p>Get updates on new drops, limited collections, and exclusive kawaii goodies.</p>
+
+<div class="input-row">
+<input type="email" placeholder="your email here ♡">
+<button class="btn pink">subscribe ✿</button>
+</div>
+</div>
+</section>
+
+<footer>
+<h3>♡ whimsy shop ♡</h3>
+<div class="socials">
+<a href="#">instagram</a>
+<a href="#">tiktok</a>
+<a href="#">pinterest</a>
+</div>
+<p>made with love, sparkles, and tiny charms ✧</p>
+</footer>
+
+<script>
+document.querySelectorAll('.btn').forEach(button=>{
+button.addEventListener('mouseenter',()=>{
+button.style.transform='translateY(-5px) scale(1.05)';
+})
+
+button.addEventListener('mouseleave',()=>{
+button.style.transform='translateY(0px) scale(1)';
+})
+})
+</script>
+
+</body>
+</html>
+        `,
+      }}
+    />
+  );
+}

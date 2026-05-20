@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me ✿</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff7f5;
+overflow-x:hidden;
+color:#6d7c6d;
+}
+
+/* soft blobs */
+body::before{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#ffd6df;
+filter:blur(120px);
+top:-100px;
+left:-100px;
+z-index:-1;
+opacity:0.7;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#d9ead7;
+filter:blur(120px);
+bottom:-100px;
+right:-100px;
+z-index:-1;
+opacity:0.7;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:40px 8%;
+}
+
+.logo{
+font-size:3rem;
+font-weight:700;
+color:#738673;
+}
+
+nav ul{
+display:flex;
+gap:50px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+font-size:1.2rem;
+font-weight:600;
+color:#6f7f6f;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff92ac;
+}
+
+/* HERO */
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:50px 8%;
+gap:60px;
+flex-wrap:wrap;
+min-height:85vh;
+}
+
+.hero-text{
+flex:1;
+min-width:300px;
+}
+
+.tag{
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff9bb0;
+margin-bottom:15px;
+font-size:0.9rem;
+}
+
+.hero h1{
+font-size:5rem;
+line-height:1;
+margin-bottom:25px;
+color:#6f7f6d;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.9;
+max-width:600px;
+}
+
+/* FOLLOW BUTTON */
+.follow-btn{
+display:inline-block;
+margin-top:25px;
+padding:18px 38px;
+border-radius:999px;
+background:#ffd8e1;
+color:#6f6f6f;
+font-weight:700;
+text-decoration:none;
+transition:0.3s;
+}
+
+.follow-btn:hover{
+transform:translateY(-5px) scale(1.05);
+background:#d8ead4;
+}
+
+/* SOCIAL LINKS UNDER BUTTON */
+.main-socials{
+margin-top:18px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.main-socials a{
+text-decoration:none;
+padding:10px 16px;
+border-radius:20px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+color:#6f6f6f;
+font-weight:600;
+transition:0.3s;
+font-size:0.95rem;
+}
+
+.main-socials a:hover{
+background:#ffd8e1;
+transform:translateY(-3px);
+}
+
+/* PHOTO */
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.photo-circle{
+width:420px;
+height:420px;
+border-radius:50%;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+background:white;
+border:10px solid white;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.photo-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* SECTION */
+.section{
+padding:70px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title p{
+letter-spacing:4px;
+text-transform:uppercase;
+color:#ff9bb0;
+font-size:0.9rem;
+}
+
+.section-title h2{
+font-size:3.2rem;
+margin-top:10px;
+color:#6f7f6d;
+}
+
+/* 2 CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+padding:35px;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+font-size:1.7rem;
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.7;
+}
+
+/* SLIM SOCIALS INSIDE CARDS */
+.social-links{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:15px;
+}
+
+.social-links a{
+text-decoration:none;
+background:#ffd8e1;
+padding:10px 14px;
+border-radius:14px;
+color:#6f6f6f;
+font-weight:600;
+font-size:0.9rem;
+transition:0.3s;
+width:fit-content;
+}
+
+.social-links a:hover{
+background:#d8ead4;
+transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+padding:40px;
+text-align:center;
+}
+
+footer h3{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-bottom:20px;
+}
+
+.socials a{
+text-decoration:none;
+color:#6f6f6f;
+transition:0.3s;
+}
+
+.socials a:hover{
+color:#ff92ac;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+nav ul{
+gap:25px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.logo{
+font-size:2.3rem;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:40px 6%;
+}
+
+.hero h1{
+font-size:3.2rem;
+}
+
+.hero p{
+font-size:1rem;
+margin:auto;
+}
+
+.photo-circle{
+width:260px;
+height:260px;
+}
+
+.section-title h2{
+font-size:2.2rem;
+}
+
+.section{
+padding:50px 6%;
+}
+
+.main-socials{
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="logo">♡ about me ♡</div>
+
+<ul>
+<li><a href="home.html">home</a></li>
+<li><a href="index.html#projects">projects</a></li>
+<li><a href="#">contacts</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="tag">artist • dreamer • creator</div>
+
+<h1>hello, i'm shekinah ✿</h1>
+
+<p>
+I love creating dreamy aesthetics, cute designs, and whimsical projects. I enjoy turning ideas into visuals, stories, and little creative worlds ♡
+</p>
+
+♡ follow my journey
+</a>
+
+<!-- MAIN SOCIALS -->
+<div class="main-socials">
+<a href="https://instagram.com/yourusername" target="_blank">instagram</a>
+<a href="https://tiktok.com/@yourusername" target="_blank">tiktok</a>
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="photo-circle">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+</div>
+
+</section>
+
+<!-- INTERESTS -->
+<section class="section">
+
+<div class="section-title">
+<p>my little world</p>
+<h2>things i love ♡</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>✿ creativity</h3>
+<p>I love designing, aesthetics, and turning ideas into visuals ♡</p>
+
+<div class="social-links">
+<a href="https://instagram.com/yourusername">instagram</a>
+<a href="https://tiktok.com/@yourusername">tiktok</a>
+</div>
+</div>
+
+<div class="card">
+<h3>☁ more socials</h3>
+<p>More places where I share inspiration and projects ✧</p>
+
+<div class="social-links">
+<a href="https://pinterest.com/yourusername">pinterest</a>
+<a href="https://youtube.com">youtube</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<h3>♡ whimsy shop ♡</h3>
+<div class="socials">
+<a href="#">instagram</a>
+<a href="#">tiktok</a>
+<a href="#">pinterest</a>
+</div>
+<p>made with love, sparkles, and tiny charms ✧</p>
+</footer>
+
+<script>
+document.querySelectorAll('.btn').forEach(button=>{
+button.addEventListener('mouseenter',()=>{
+button.style.transform='translateY(-5px) scale(1.05)';
+})
+
+button.addEventListener('mouseleave',()=>{
+button.style.transform='translateY(0px) scale(1)';
+})
+})
+</script>
+
+</body>
+</html>
