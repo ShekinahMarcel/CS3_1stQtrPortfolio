@@ -152,22 +152,27 @@ min-width:300px;
 .logo-circle{
 width:420px;
 height:420px;
-background:rgba(255,255,255,0.7);
 border-radius:50%;
+overflow:hidden;
+
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(15px);
+
 display:flex;
 align-items:center;
 justify-content:center;
-backdrop-filter:blur(15px);
+
 box-shadow:0 20px 50px rgba(0,0,0,0.08);
 border:10px solid white;
 }
 
 .logo-circle img{
-width:65%;
-height:65%;
-object-fit:contain;
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+display:block;
 }
-
 .section-title{
 text-align:center;
 padding-top:40px;
@@ -342,7 +347,7 @@ font-size:2.5rem;
 <div class="page-container">
 
 <nav>
-<div class="logo">♡ whimsy shop ♡</div>
+<div class="logo">♡ Shop now! ♡</div>
 <ul>
 <li><a href="#home">home</a></li>
 <li><a href="#contacts">contacts</a></li>
@@ -352,10 +357,10 @@ font-size:2.5rem;
 
 <section class="hero" id="home">
 <div class="hero-text">
-<div class="tag">cute • dreamy • handmade</div>
-<h1>kawaii little treasures ✿</h1>
+<div class="tag">whimsy • with love • handmade</div>
+<h1>Love, She Charms Studio ✿</h1>
 <p>
-A dreamy collection of charms, stickers, keychains, and tiny trinkets made to bring whimsy into your everyday life.
+A collection of charms, stickers, keychains, and tiny trinkets made to bring whimsy into your everyday life 𝜗ৎ
 </p>
 
 <div class="buttons">
@@ -377,46 +382,50 @@ events ♡
 
 <div class="hero-image">
 <div class="logo-circle">
-<img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="logo">
+<img src="https://i.pinimg.com/736x/58/de/1e/58de1eb312ed77ef45f57e914faf9fd1.jpg" alt="logo">
 </div>
 </div>
 </section>
 
 <div class="section-title" id="projects">
-<p>featured goodies</p>
+<p>featured items</p>
 <h2>cutest picks ♡</h2>
 </div>
 
 <section class="products">
 <div class="card">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop">
+<img src="https://i.pinimg.com/736x/7a/15/40/7a154064b0068c473a5ab2393a81cb76.jpg">
 <div class="card-content">
-<h3>Berry Bunny Keychain</h3>
+<h3>Sticker Designs</h3>
 <div class="price-row">
-<div class="price">₱120</div>
-<button class="btn green">add ♡</button>
+
 </div>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop">
+<img src="https://i.pinimg.com/736x/d8/3e/a1/d83ea1e984b8eb89f42eab4ead833e96.jpg">
 <div class="card-content">
-<h3>Sage Sticker Pack</h3>
+<h3>Keychains</h3>
 <div class="price-row">
-<div class="price">₱85</div>
-<button class="btn pink">add ♡</button>
 </div>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=1200&auto=format&fit=crop">
+<img src="https://i.pinimg.com/736x/c6/4a/3c/c64a3c6f711bc4d59d1ba882a2fbe88a.jpg">
 <div class="card-content">
-<h3>Pink Charm Bracelet</h3>
+<h3>Button Hair Clips</h3>
 <div class="price-row">
-<div class="price">₱160</div>
-<button class="btn green">add ♡</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://i.pinimg.com/736x/dc/2a/1d/dc2a1d2b793f3e4f6f829b85c4f340f6.jpg">
+<div class="card-content">
+<h3>Pop Socket</h3>
+<div class="price-row">
 </div>
 </div>
 </div>
@@ -436,26 +445,31 @@ button.style.transform='translateY(0px) scale(1)';
 
 <section class="newsletter">
 <div class="news-box">
-<p class="tag">stay updated</p>
-<h2>join the cute mail club ♡</h2>
+<p class="tag">Stay updated</p>
+<h2>should i start a mail club?</h2>
 <p>Get updates on new drops, limited collections, and exclusive kawaii goodies.</p>
 
 <div class="input-row">
-<input type="email" placeholder="your email here ♡">
-<button class="btn pink">subscribe ✿</button>
+
+<button class="btn pink"
+onclick="window.open('https://forms.gle/ZH7fiz2o4BntYm3n6', '_blank')">
+
+vote here ✿
+
+</button>
+
 </div>
-</div>
-</section>
 
 <footer>
-<h3>♡ whimsy shop ♡</h3>
+<h3>♡ Love, She Charms Studio ♡</h3>
 <div class="socials">
-<a href="#">instagram</a>
-<a href="#">tiktok</a>
-<a href="#">pinterest</a>
+<a href="https://www.instagram.com/loveshecharms?igsh=YXQ5b2ZscjBycjY2&utm_source=qr">instagram</a>
+<a href="https://www.tiktok.com/@loveshecharms?_r=1&_t=ZS-96XB4oxd617">tiktok</a>
+<a href="https://pin.it/1V0P5yD1V">pinterest</a>
 </div>
 <p>made with love, sparkles, and tiny charms ✧</p>
 </footer>
+
 
 <script>
 document.querySelectorAll('.btn').forEach(button=>{
@@ -471,8 +485,4 @@ button.style.transform='translateY(0px) scale(1)';
 
 </body>
 </html>
-        `,
-      }}
-    />
-  );
-}
+      
